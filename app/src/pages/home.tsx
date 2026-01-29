@@ -1,0 +1,24 @@
+import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+export function Home() {
+  return (
+    <main className="flex items-center justify-center align-middle h-screen">
+      <p>
+        <span className="text-2xl font-bold">
+          Hello! Welcome to this website.
+        </span>
+        <br />
+        <text className="text-l">
+          This website was created for the qualification test to become a
+          frontend engineer at <span className="font-semibold">MIFX</span>.
+        </text>
+        <br />
+        <a href="/products" className="text-l font-semibold underline">
+          click here to go to the main page{" "}
+          <FontAwesomeIcon icon={faArrowUpRightFromSquare} size="xs" />
+        </a>
+      </p>
+    </main>
+  );
+}

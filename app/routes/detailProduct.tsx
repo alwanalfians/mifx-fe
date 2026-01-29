@@ -1,11 +1,8 @@
-import type { Route } from "./+types/main";
+import type { Route } from "./+types/detailProduct";
 import { DetailProduct } from "../src/pages/detailProduct";
 
 export function meta({}: Route.MetaArgs) {
-  return [
-    { title: "Products" },
-    { name: "description", content: "Welcome to React Router!" },
-  ];
+  return [{ title: "Detail Product" }];
 }
 
 export default function Main() {
