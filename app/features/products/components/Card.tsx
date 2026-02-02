@@ -1,8 +1,9 @@
 import "@smastrom/react-rating/style.css";
 
 import { Carousel } from "./Carousel";
+import type { IProduct } from "../types";
 import { ProductDetail } from "./ProductDetail";
-import type { IProduct } from "~/types";
+
 interface IDetailProductCard {
   data: IProduct;
   isLoading?: boolean;

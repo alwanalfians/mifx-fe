@@ -1,4 +1,4 @@
-import type { IImage, IProduct } from "./types";
+import type { IImage, IProduct } from "./features/products/types";
 
 export const mockListImage: IImage[] = [
   {

@@ -1,6 +1,6 @@
 import { Rating, Star } from "@smastrom/react-rating";
 import { useNavigate } from "react-router";
-import type { IProduct } from "~/types";
+import type { IProduct } from "../types";
 
 interface IProductCard {
   data: IProduct;

@@ -1,11 +1,4 @@
-import { ProductList } from "~/components/ProductList";
 export type TBadge = "SALE" | "NEW" | "BESTSELLER" | "SELL";
-
-export interface ICart {
-  id: string;
-  name: string;
-  price: number;
-}
 
 export interface IImage {
   id: string;

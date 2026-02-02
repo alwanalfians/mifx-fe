@@ -12,6 +12,7 @@ import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
 import type { Route } from "./+types/root";
 import "./app.css";
 import "@smastrom/react-rating/style.css";
+import { CartProvider } from "./features/cart/contexts/Cart";
 
 const queryClient = new QueryClient();
 
@@ -39,7 +40,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
       </head>
       <body className="pb-4 px-80 mt-8 mx-8 gap-4">
         <QueryClientProvider client={queryClient}>
-          {children}
+          <CartProvider>{children}</CartProvider>
         </QueryClientProvider>
         <ScrollRestoration />
         <Scripts />

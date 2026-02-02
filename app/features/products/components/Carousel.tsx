@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
 
 import "@smastrom/react-rating/style.css";
-import type { IImage } from "~/types";
+import type { IImage } from "../types";
 
 interface ICarousel {
   listImage: IImage[];
@@ -16,7 +16,7 @@ export function Carousel({ listImage }: ICarousel) {
     <div className="flex flex-col space-y-4">
       <div className="relative">
         <img
-          className="rounded-lg border border-gray-200 size-80 object-scale-down shadow-xs"
+          className="rounded-lg border border-gray-200 size-80 object-contain shadow-xs"
           src={listImage[activeImage].url}
           alt="Product Image"
         />

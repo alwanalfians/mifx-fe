@@ -8,7 +8,7 @@ import {
 export default [
   index("routes/landing.tsx"),
   ...prefix("products", [
-    index("routes/list.tsx"),
-    route(":id", "routes/detail.tsx"),
+    index("routes/productList.tsx"),
+    route(":id", "routes/productDetail.tsx"),
   ]),
 ] satisfies RouteConfig;

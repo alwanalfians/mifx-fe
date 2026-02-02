@@ -1,13 +1,11 @@
-import { Header } from "~/components/Header";
-import { ProductList } from "~/components/ProductList";
-import { useProducts } from "~/hooks/useProducts";
+import { ProductList } from "~/features/products/components/ProductList";
+import { useProducts } from "~/features/products/hooks/useProducts";
 
-export function Products() {
+export function ProductsList() {
   const { data, isLoading, error } = useProducts();
 
   return (
     <div className="items-center justify-center space-y-4">
-      <Header />
       <ProductList data={data || []} isLoading={isLoading} isError={error} />
     </div>
   );
