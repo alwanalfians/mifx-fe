@@ -9,10 +9,10 @@ export function Landing() {
           Hello! Welcome to this website.
         </span>
         <br />
-        <text className="text-l">
+        <p className="text-l">
           This website was created for the qualification test to become a
           frontend engineer at <span className="font-semibold">MIFX</span>.
-        </text>
+        </p>
         <br />
         <a href="/products" className="text-l font-semibold underline">
           click here to go to the main page{" "}

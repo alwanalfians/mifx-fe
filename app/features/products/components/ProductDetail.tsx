@@ -13,7 +13,7 @@ export function ProductDetail({ data }: IDetailProduct) {
 
   return (
     <div className="flex flex-col space-y-4 pt-6">
-      <div className="border-b-2 border-gray-200  pb-4">
+      <div className="border-b-2 border-gray-200 pb-4">
         <div className="text-red-500 text-[8px] font-bold mb-1">
           {data.badge}
         </div>

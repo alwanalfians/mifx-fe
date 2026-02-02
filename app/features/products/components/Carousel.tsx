@@ -13,10 +13,10 @@ export function Carousel({ listImage }: ICarousel) {
   const [activeImage, setActiveImage] = useState(0);
 
   return (
-    <div className="flex flex-col space-y-4">
-      <div className="relative">
+    <div className="flex flex-col space-y-4 px-24 lg:px-0">
+      <div className="relative justify-center items-center inline-flex">
         <img
-          className="rounded-lg border border-gray-200 size-80 object-contain shadow-xs"
+          className="rounded-lg border border-gray-200 w-full size-60 lg:size-80 object-cover shadow-xs"
           src={listImage[activeImage].url}
           alt="Product Image"
         />
@@ -30,9 +30,9 @@ export function Carousel({ listImage }: ICarousel) {
           >
             <FontAwesomeIcon icon={faCaretLeft} />
           </button>
-          <text className="px-2 py-1 border-gray-700">
+          <p className="px-2 py-1 border-gray-700">
             {activeImage + 1 + "/" + listImage.length}
-          </text>
+          </p>
           <button
             className="px-1 border-l border-gray-700 cursor-pointer"
             onClick={() => {
@@ -44,7 +44,7 @@ export function Carousel({ listImage }: ICarousel) {
           </button>
         </div>
       </div>
-      <div className="max-w-80 overflow-x-auto">
+      <div className="max-w-auto lg:max-w-80 overflow-x-auto">
         <div className="flex flex-flex-nowrap gap-2 items-center justify-center">
           {listImage.map((item, index) => {
             return (

@@ -38,7 +38,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Meta />
         <Links />
       </head>
-      <body className="pb-4 px-80 mt-8 mx-8 gap-4">
+      <body className="pb-4 sm:px-0 md:px-40 lg:px-80 mt-8 mx-8 gap-4">
         <QueryClientProvider client={queryClient}>
           <CartProvider>{children}</CartProvider>
         </QueryClientProvider>

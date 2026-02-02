@@ -1,5 +1,5 @@
 import { useParams } from "react-router";
-import { DetailProductCard } from "~/features/products/components/Card";
+import { CardDetail } from "~/features/products/components/CardDetail";
 import { useProductDetail } from "~/features/products/hooks/useProducts";
 import type { IProduct } from "../types";
 
@@ -10,7 +10,7 @@ export function ProductDetail() {
 
   return (
     <div className="items-center justify-center space-y-4">
-      <DetailProductCard
+      <CardDetail
         data={data as IProduct}
         isLoading={isLoading}
         isError={error}

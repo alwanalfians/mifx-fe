@@ -12,7 +12,7 @@ export function ProductList({ data, isLoading, isError }: IProductList) {
   if (isError) return <p>Error loading products</p>;
 
   return (
-    <div className="grid grid-cols-3 gap-4">
+    <div className="grid grid-cols-2 lg:grid-cols-3 gap-4">
       {data.map((item) => (
         <ProductCard key={item.id} data={item} />
       ))}

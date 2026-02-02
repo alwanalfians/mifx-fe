@@ -6,7 +6,7 @@ export function Header() {
   const { cartCount } = useCart();
 
   return (
-    <div className="flex w-auto justify-between rounded-lg shadow-md p-8 px-12 border border-gray-200 bg-white">
+    <div className="flex justify-between lg:min-w-2xl rounded-lg shadow-md p-8 px-12 border border-gray-200 bg-white">
       <a href="/">
         <p className="font-extrabold text-xl">iSneakers</p>
       </a>

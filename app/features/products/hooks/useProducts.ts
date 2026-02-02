@@ -2,11 +2,17 @@ import { useQuery } from "@tanstack/react-query";
 import { fetchProducts } from "../api/products";
 import type { IProduct, IProductListResponse } from "../types";
 
-export const useProducts = () => {
+export const useProducts = (searchQuery: string) => {
   return useQuery<IProductListResponse, Error, IProduct[]>({
     queryKey: ["products"],
     queryFn: fetchProducts,
-    select: (res) => res.data,
+    select: (res) => {
+      return searchQuery.length < 1
+        ? res.data
+        : res.data.filter((object) =>
+            object.name.toLowerCase().includes(searchQuery.toLowerCase()),
+          );
+    },
     staleTime: 1000 * 60 * 5,
   });
 };

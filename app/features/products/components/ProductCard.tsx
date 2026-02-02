@@ -19,7 +19,7 @@ export function ProductCard({ data }: IProductCard) {
       className="flex flex-col w-auto rounded-lg shadow-xs border border-gray-200 bg-white cursor-pointer hover:shadow-md"
     >
       <img
-        className="border border-gray-200 w-auto h-48 object-cover shadow-xs"
+        className="border border-gray-200 w-auto h-28 lg:h-30 object-cover shadow-xs"
         src={data.images[0].url}
         alt="Product Image"
       />
