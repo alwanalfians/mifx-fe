@@ -1,5 +1,5 @@
-import type { Route } from "./+types/products";
-import { Products } from "../pages/products";
+import type { Route } from "./+types/list";
+import { Products } from "../pages/list";
 
 export function meta({}: Route.MetaArgs) {
   return [{ title: "Products" }];

@@ -1,15 +1,13 @@
 import { faCartFlatbed } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Rating, Star } from "@smastrom/react-rating";
-
-import "@smastrom/react-rating/style.css";
 import type { IProduct } from "~/types";
 
 interface IDetailProduct {
   data: IProduct;
 }
 
-export function DetailProduct({ data }: IDetailProduct) {
+export function ProductDetail({ data }: IDetailProduct) {
   return (
     <div className="flex flex-col space-y-4 pt-6">
       <div className="border-b-2 border-gray-200  pb-4">
@@ -30,7 +28,7 @@ export function DetailProduct({ data }: IDetailProduct) {
               }}
               readOnly
             />
-            <text>({0} reviews)</text>
+            <p>({0} reviews)</p>
           </div>
           <div className="font-bold text-lg">${data.price}</div>
         </div>

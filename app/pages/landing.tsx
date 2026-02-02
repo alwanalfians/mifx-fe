@@ -1,9 +1,9 @@
 import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-export function Home() {
+export function Landing() {
   return (
-    <main className="flex items-center justify-center align-middle h-screen">
+    <main className="flex items-center justify-center align-middle min-h-screen">
       <p>
         <span className="text-2xl font-bold">
           Hello! Welcome to this website.

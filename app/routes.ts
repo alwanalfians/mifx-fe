@@ -6,9 +6,9 @@ import {
 } from "@react-router/dev/routes";
 
 export default [
-  index("routes/home.tsx"),
+  index("routes/landing.tsx"),
   ...prefix("products", [
-    index("routes/products.tsx"),
-    route(":id", "routes/detailProduct.tsx"),
+    index("routes/list.tsx"),
+    route(":id", "routes/detail.tsx"),
   ]),
 ] satisfies RouteConfig;

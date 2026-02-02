@@ -1,17 +1,26 @@
-import { faCartFlatbed } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Rating, Star } from "@smastrom/react-rating";
-
 import "@smastrom/react-rating/style.css";
-import { Carousel } from "./Carousel";
-import { mockDetailProduct, mockListImage } from "~/mockData";
-import { DetailProduct } from "./DetailProduct";
 
-export function DetailProductCard() {
+import { Carousel } from "./Carousel";
+import { ProductDetail } from "./ProductDetail";
+import type { IProduct } from "~/types";
+interface IDetailProductCard {
+  data: IProduct;
+  isLoading?: boolean;
+  isError?: Error | null;
+}
+
+export function DetailProductCard({
+  data,
+  isLoading,
+  isError,
+}: IDetailProductCard) {
+  if (isLoading) return <p>Loading...</p>;
+  if (isError) return <p>Error loading detail product</p>;
+
   return (
-    <main className="flex w-auto rounded-lg shadow-md p-8 px-12 border border-gray-200 bg-white gap-12">
-      <Carousel listImage={mockListImage} />
-      <DetailProduct data={mockDetailProduct} />
-    </main>
+    <div className="flex size-auto justify-center rounded-lg shadow-md p-8 px-12 border border-gray-200 bg-white gap-12">
+      <Carousel listImage={data.images} />
+      <ProductDetail data={data} />
+    </div>
   );
 }

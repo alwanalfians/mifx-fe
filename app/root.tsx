@@ -7,8 +7,13 @@ import {
   ScrollRestoration,
 } from "react-router";
 
+import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
+
 import type { Route } from "./+types/root";
 import "./app.css";
+import "@smastrom/react-rating/style.css";
+
+const queryClient = new QueryClient();
 
 export const links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -32,8 +37,10 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Meta />
         <Links />
       </head>
-      <body>
-        {children}
+      <body className="pb-4 px-80 mt-8 mx-8 gap-4">
+        <QueryClientProvider client={queryClient}>
+          {children}
+        </QueryClientProvider>
         <ScrollRestoration />
         <Scripts />
       </body>

@@ -1,42 +1,21 @@
-import { useState, useEffect } from "react";
+import { useQuery } from "@tanstack/react-query";
+import { fetchProducts } from "../api/products";
+import type { IProduct, IProductListResponse } from "../types";
 
-const useProducts = () => {
-  const API_URL = `${import.meta.env.VITE_API_PRODUCT}/products`;
-  const [data, setData] = useState(null);
-  const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState(null);
-
-  useEffect(() => {
-    const controller = new AbortController();
-
-    const fetchProducts = async () => {
-      try {
-        setIsLoading(true);
-        const res = await fetch(API_URL, {
-          signal: controller.signal,
-        });
-
-        if (!res.ok) {
-          throw new Error("Failed to fetch products");
-        }
-
-        const json = await res.json();
-        setData(json);
-      } catch (err: any) {
-        if (err.name !== "AbortError") {
-          setError(err.message);
-        }
-      } finally {
-        setIsLoading(false);
-      }
-    };
-
-    fetchProducts();
-
-    return () => controller.abort();
-  }, []);
-
-  return { data, isLoading, error };
+export const useProducts = () => {
+  return useQuery<IProductListResponse, Error, IProduct[]>({
+    queryKey: ["products"],
+    queryFn: fetchProducts,
+    select: (res) => res.data,
+    staleTime: 1000 * 60 * 5,
+  });
 };
 
-export default useProducts;
+export const useProductDetail = (id: string) => {
+  return useQuery<IProductListResponse, Error, IProduct>({
+    queryKey: ["productDetail", id],
+    queryFn: fetchProducts,
+    select: (res) =>
+      res.data.find((object) => object.id === id) ?? ({} as IProduct),
+  });
+};

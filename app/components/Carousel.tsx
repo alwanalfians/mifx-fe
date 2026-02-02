@@ -20,7 +20,6 @@ export function Carousel({ listImage }: ICarousel) {
           src={listImage[activeImage].url}
           alt="Product Image"
         />
-        {/* navigation */}
         <div className="absolute text-[8px] right-2 bottom-2 items-center justify-center inline-flex rounded-md bg-gray-800 text-gray-100 overflow-hidden">
           <button
             className="px-1 border-r border-gray-700 cursor-pointer"
