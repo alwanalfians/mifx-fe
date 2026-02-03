@@ -1,7 +1,10 @@
 import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { usePageTitle } from "~/hooks/usePageTitle";
 
 export function Landing() {
+  usePageTitle("Welcome");
+
   return (
     <main className="flex items-center justify-center align-middle min-h-screen">
       <p>

@@ -7,7 +7,7 @@ export function Header() {
 
   return (
     <div className="flex justify-between lg:min-w-2xl rounded-lg shadow-md p-8 px-12 border border-gray-200 bg-white">
-      <a href="/">
+      <a href="/products">
         <p className="font-extrabold text-xl">iSneakers</p>
       </a>
       <div>

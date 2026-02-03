@@ -1,19 +1,21 @@
 import { useParams } from "react-router";
-import { CardDetail } from "~/features/products/components/CardDetail";
+import { ProductDetailSection } from "~/features/products/components/ProductDetailSection";
 import { useProductDetail } from "~/features/products/hooks/useProducts";
 import type { IProduct } from "../types";
+import { usePageTitle } from "~/hooks/usePageTitle";
 
 export function ProductDetail() {
   const { id } = useParams();
-
   const { data, isLoading, error } = useProductDetail(id ?? "");
+
+  usePageTitle(data?.name ?? "Product Detail");
 
   return (
     <div className="items-center justify-center space-y-4">
-      <CardDetail
+      <ProductDetailSection
         data={data as IProduct}
         isLoading={isLoading}
-        isError={error}
+        error={error}
       />
     </div>
   );

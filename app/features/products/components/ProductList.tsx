@@ -1,15 +1,17 @@
+import { Loading } from "~/components/Loading";
 import type { IProduct } from "../types";
 import { ProductCard } from "./ProductCard";
+import { Error } from "~/components/Error";
 
 interface IProductList {
   data: IProduct[];
   isLoading?: boolean;
-  isError?: Error | null;
+  error?: Error | null;
 }
 
-export function ProductList({ data, isLoading, isError }: IProductList) {
-  if (isLoading) return <p>Loading...</p>;
-  if (isError) return <p>Error loading products</p>;
+export function ProductList({ data, isLoading, error }: IProductList) {
+  if (isLoading) return <Loading />;
+  if (error) return <Error />;
 
   return (
     <div className="grid grid-cols-2 lg:grid-cols-3 gap-4">

@@ -36,7 +36,7 @@ export function ProductDetail({ data }: IDetailProduct) {
           <div className="font-bold text-lg">${data.price}</div>
         </div>
       </div>
-      <div className="flex gap-2 text-[8px] font-bold">
+      <div className="flex gap-2 text-[8px] font-bold justify-between">
         <button
           onClick={() => addToCart(data.id)}
           className="bg-yellow-500 py-2 min-w-24 rounded-md shadow-md cursor-pointer hover:bg-yellow-300"
