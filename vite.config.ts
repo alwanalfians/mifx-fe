@@ -1,3 +1,5 @@
+/// <reference types="vitest/config" />
+
 import { reactRouter } from "@react-router/dev/vite";
 import tailwindcss from "@tailwindcss/vite";
 import { defineConfig } from "vite";
@@ -13,5 +15,11 @@ export default defineConfig({
         secure: false,
       },
     },
+  },
+  test: {
+    globals: true,
+    environment: "jsdom",
+    setupFiles: ["./app/test/setup.ts"],
+    css: true,
   },
 });
