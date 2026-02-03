@@ -1,6 +1,7 @@
+import { getCartKey } from "~/utils";
 import type { ICartItem } from "./types";
 
-const CART_KEY = "cart_items";
+const CART_KEY = getCartKey();
 
 export const getCartFromStorage = () => {
   if (typeof window === "undefined") return [];

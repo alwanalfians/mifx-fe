@@ -1,6 +1,7 @@
 import { useEffect } from "react";
+import { getAppName } from "~/utils";
 
-const APP_NAME = "iSneakers";
+const APP_NAME = getAppName();
 
 export const usePageTitle = (title?: string) => {
   useEffect(() => {
